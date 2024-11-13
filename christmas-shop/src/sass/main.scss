@@ -1,6 +1,56 @@
 @import "typography";
 @import "colors";
+@import "base";
 
-.primary {
-  color: var(--color-primary);
+body {
+  margin: 0 auto;
+  width: 1440px;
+  background-color: var(--color-dark);
+}
+//FIX:
+.wrapper {
+  padding: 0 82px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-static-white);
+  padding: 12px 82px;
+}
+
+.logo a {
+  padding: 8px 20px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.menu > ul {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu a {
+  padding: 12px 20px;
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+main {
+  background-color: var(--color-primary);
+}
+
+footer {
+  background-color: var(--color-static-white);
 }

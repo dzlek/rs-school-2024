@@ -9,7 +9,7 @@
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: $line-height;
-  letter-spacing: $letter-spacing;
+  letter-spacing: $font-size * ($letter-spacing / 100%);
   text-transform: $text-transform;
   font-family: $font-family;
 }
@@ -31,7 +31,7 @@
 }
 
 .paragraph {
-  @include fonts(1rem, 400, 148%, normal, none);
+  @include fonts(1rem, 400, 148%, 0%, none);
 }
 
 .actionLarge {
@@ -47,5 +47,5 @@
 }
 
 .sliderText {
-  @include fonts(3.75rem, 600, normal, normal);
+  @include fonts(3.75rem, 600, normal, 0%);
 }
