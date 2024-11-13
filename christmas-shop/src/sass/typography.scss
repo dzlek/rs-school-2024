@@ -11,9 +11,41 @@
   line-height: $line-height;
   letter-spacing: $letter-spacing;
   text-transform: $text-transform;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-family;
 }
 
 .header1 {
   @include fonts(2rem, 600, 150%, 18%);
+}
+
+.header2 {
+  @include fonts(1.5rem, 600, 152%, 16%);
+}
+
+.header3 {
+  @include fonts(1rem, 600, 152%, 8%);
+}
+
+.header4 {
+  @include fonts(0.75rem, 600, 130%, 5%);
+}
+
+.paragraph {
+  @include fonts(1rem, 400, 148%, normal, none);
+}
+
+.actionLarge {
+  @include fonts(1.75rem, 600, 152%, 16%);
+}
+
+.actionSmall {
+  @include fonts(0.75rem, 600, 130%, 5%);
+}
+
+.caption {
+  @include fonts(1.75rem, 400, 100%, 5%, none, ("Allura", sans-serif));
+}
+
+.sliderText {
+  @include fonts(3.75rem, 600, normal, normal);
 }
