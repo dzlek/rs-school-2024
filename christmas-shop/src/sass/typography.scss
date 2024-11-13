@@ -1,0 +1,19 @@
+@mixin fonts(
+  $font-size,
+  $font-weight,
+  $line-height,
+  $letter-spacing,
+  $text-transform: uppercase,
+  $font-family: ("Montserrat", sans-serif)
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  text-transform: $text-transform;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header1 {
+  @include fonts(2rem, 600, 150%, 18%);
+}

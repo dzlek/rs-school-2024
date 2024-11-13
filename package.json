@@ -1,0 +1,23 @@
+{
+  "name": "dzlek-jsfe2024q4",
+  "version": "1.0.0",
+  "description": "rs-school private repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "sass": "sass --watch christmas-shop/src/sass/main.scss:christmas-shop/src/css/main.css christmas-shop/src/sass/home.scss:christmas-shop/src/css/home.css christmas-shop/src/sass/gifts.scss:christmas-shop/src/css/gifts.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/dzlek-JSFE2024Q4.git"
+  },
+  "author": "dzlek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/dzlek-JSFE2024Q4/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/dzlek-JSFE2024Q4#readme",
+  "dependencies": {
+    "sass": "^1.80.7"
+  }
+}
