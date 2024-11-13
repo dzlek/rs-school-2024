@@ -35,7 +35,7 @@
 }
 
 .actionLarge {
-  @include fonts(1.75rem, 600, 152%, 16%);
+  @include fonts(1.5rem, 600, 152%, 16%);
 }
 
 .actionSmall {
@@ -43,7 +43,7 @@
 }
 
 .caption {
-  @include fonts(1.75rem, 400, 100%, 5%, none, ("Allura", sans-serif));
+  @include fonts(1.5rem, 400, 100%, 5%, none, ("Allura", sans-serif));
 }
 
 .sliderText {
