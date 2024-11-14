@@ -1,0 +1,44 @@
+@import "base";
+@import "typography";
+@import "colors";
+@import "button";
+
+#gifts {
+  background-image: url("../../public/images/bg-garland.png");
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--color-static-white);
+  gap: 20px;
+
+  & .header1 {
+    margin: 0 auto;
+    max-width: 426px;
+  }
+}
+
+.gifts-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gifts-tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.bestGifts-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}

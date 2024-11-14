@@ -132,10 +132,6 @@ button {
   transition: background-color 100ms ease;
 }
 
-button:active {
-  background-color: #004085;
-}
-
 button:disabled {
   pointer-events: none;
 }
@@ -169,9 +165,20 @@ button:disabled {
   border: 1px var(--color-static-white-40) solid;
 }
 
-main {
-  background-color: var(--color-primary);
-  border-radius: 20px;
+.btn-tab {
+  padding: 12px 20px;
+  background-color: transparent;
+  color: var(--color-static-white);
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+.btn-tab:hover {
+  background-color: var(--color-static-white-20);
+}
+.btn-tab.active {
+  background-color: var(--color-static-white-20);
+  pointer-events: none;
 }
 
 #hero {
@@ -298,55 +305,6 @@ main {
   align-items: center;
   text-align: center;
   gap: 12px;
-}
-
-.bestGifts-items {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-}
-
-.bestGift-card {
-  width: 310px;
-  height: 342px;
-  background-color: var(--color-static-white);
-  border-radius: 20px;
-}
-.bestGift-card .header3 {
-  color: var(--color-dark);
-}
-.bestGift-card .bestGift-image {
-  height: 230px;
-  width: 310px;
-}
-.bestGift-card:hover {
-  cursor: pointer;
-}
-.bestGift-card:hover .header3 {
-  color: var(--color-primary);
-}
-
-.bestGift-card:nth-of-type(1) .header4 {
-  color: var(--color-tag-purple);
-}
-
-.bestGift-card:nth-of-type(2) .header4 {
-  color: var(--color-tag-green);
-}
-
-.bestGift-card:nth-of-type(3) .header4 {
-  color: var(--color-tag-purple);
-}
-
-.bestGift-card:nth-of-type(4) .header4 {
-  color: var(--color-tag-pink);
-}
-
-.card-text {
-  padding: 15px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 #cta {

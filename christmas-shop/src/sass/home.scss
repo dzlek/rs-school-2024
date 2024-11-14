@@ -3,12 +3,6 @@
 @import "colors";
 @import "button";
 
-main {
-  background-color: var(--color-primary);
-
-  border-radius: 20px;
-}
-
 #hero {
   padding: 60px 0;
   margin: 0;
@@ -133,58 +127,6 @@ main {
   align-items: center;
   text-align: center;
   gap: 12px;
-}
-
-.bestGifts-items {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-}
-
-.bestGift-card {
-  width: 310px;
-  height: 342px;
-  background-color: var(--color-static-white);
-  border-radius: 20px;
-
-  & .header3 {
-    color: var(--color-dark);
-  }
-
-  & .bestGift-image {
-    height: 230px;
-    width: 310px;
-  }
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:hover .header3 {
-    color: var(--color-primary);
-  }
-}
-
-.bestGift-card:nth-of-type(1) .header4 {
-  color: var(--color-tag-purple);
-}
-
-.bestGift-card:nth-of-type(2) .header4 {
-  color: var(--color-tag-green);
-}
-
-.bestGift-card:nth-of-type(3) .header4 {
-  color: var(--color-tag-purple);
-}
-
-.bestGift-card:nth-of-type(4) .header4 {
-  color: var(--color-tag-pink);
-}
-
-.card-text {
-  padding: 15px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 #cta {

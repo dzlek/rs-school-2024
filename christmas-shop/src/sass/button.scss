@@ -1,15 +1,9 @@
 button {
   background-color: var(--color-dark);
   color: var(--color-static-white);
-
   border-radius: 20px;
-
   cursor: pointer;
   transition: background-color 100ms ease;
-}
-//FIX: rm
-button:active {
-  background-color: #004085;
 }
 
 button:disabled {
@@ -43,5 +37,21 @@ button:disabled {
 
   &:disabled {
     border: 1px var(--color-static-white-40) solid;
+  }
+}
+
+.btn-tab {
+  padding: 12px 20px;
+  background-color: transparent;
+  color: var(--color-static-white);
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--color-static-white-20);
+  }
+  &.active {
+    background-color: var(--color-static-white-20);
+    pointer-events: none;
   }
 }
