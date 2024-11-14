@@ -2,6 +2,10 @@
 @import "typography";
 @import "colors";
 
+$tablet-min: 768px;
+$tablet-max: 1060px;
+$mobile-max: 767px;
+
 body {
   margin: 0 auto;
   max-width: 1440px;
@@ -97,6 +101,16 @@ footer {
   }
   & h3 {
     @extend .header3;
+  }
+
+  // Стили для планшетов
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+    flex-direction: column;
+  }
+
+  // Стили для телефонов
+  @media (max-width: $mobile-max) {
+    flex-direction: column;
   }
 }
 

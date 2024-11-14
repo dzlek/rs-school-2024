@@ -211,6 +211,17 @@ footer {
   width: 80px;
   margin: 0 auto;
 }
+@media (min-width: 768px) and (max-width: 1060px) {
+  .contacts-items {
+    flex-direction: column;
+  }
+}
+@media (max-width: 767px) {
+  .contacts-items {
+    flex-direction: column;
+  }
+}
+
 .contacts-social {
   display: flex;
   flex-direction: column;
