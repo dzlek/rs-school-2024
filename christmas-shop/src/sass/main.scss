@@ -115,6 +115,7 @@ footer {
 }
 
 .icon {
+  display: block;
   &:hover path {
     stroke: var(--color-primary);
   }
