@@ -15,10 +15,11 @@
 
 <body>
 <!-- https://www.figma.com/design/MkTvRUSlpZGOHH6Kq223Nn/Christmas-Shop-(Copy)?node-id=0-1&node-type=canvas&t=h3rsBm1es0AdLonK-0 -->
+<!-- https://github.com/rolling-scopes-school/tasks/blob/master/tasks/christmas-shop/christmas-shop-part1.md -->
 <header>
     <div class="logo ">
         <a href="index.html">
-            <img src="./public/assets/logo.svg" alt="Christmas Shop Logo" height="24" width="24"><h1 class="actionSmall">the gifts</h1>
+            <img src="./public/assets/logo.svg" alt="Christmas Shop Logo" height="24" width="24"><span class="actionSmall">the gifts</з>
         </a>
     </div>
     <div class="menu actionSmall">
@@ -31,10 +32,123 @@
     </div>
 </header>
 
-<main class="wrapper">
+<main >
+<section id="hero">
+    <div class="hero-wrapper">
+        <p class="caption">Merry Christmas</p>
+        <p class="header1">Gift yourself the magic of new possibilities</p>
+        <button class="actionSmall btn-primary">Explore Magical Gifts</button>
+        <p class="caption">and Happy New Year</p>
+    </div>
+</section>
 
+<section id="about" class="wrapper">
+    <div class="about-container">
+        <div class="about-text">
+            <p class="caption">About</p>
+            <p class="header2">Unleash your inner superhero!</p>
+            <p class="paragraph">This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique gifts that will help you improve your life.</p>
+        </div>
+        <img class="about-image" src="./public/images/santa.png" alt="santa">
+</div>
+</section>
 
-    main
+<section id="slider" class="wrapper">
+    <div class="slider-text">
+<p class="caption">Become Happier!</p>
+<p class="header2">in the new 2025</p>
+</div>
+<div class="slider-items">
+<p class="sliderText">Live</p>
+<img src="./public/images/snowman.png" alt="snowman" class="slider-image">
+<p class="sliderText">create</p>
+<img src="./public/images/christmas-trees.png" alt=""christmas-trees class="slider-image">
+<p class="sliderText">Love</p>
+<img src="./public/images/christmas-tree-ball.png" alt="christmas-tree-ball" class="slider-image">
+<p class="sliderText">dream</p>
+<img src="./public/images/fairytale-house.png" alt="fairytale-house" class="slider-image">
+
+</div>
+<div class="slider-buttons">
+<button class="btn-slider" disabled><svg class="slider-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13.5 7H1M1 7L7 1M1 7L7 13" stroke="white" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg></button>
+<button class="btn-slider"><svg class="slider-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1 7H13.5M13.5 7L7.5 1M13.5 7L7.5 13" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg></button>
+</div>
+    </section>
+
+<section id="bestGift" class="wrapper">
+        <div class="bestGift-text">
+            <p class="caption">Best Gifts</p>
+            <p class="header2">especially for you</p>
+        </div>
+    <div class="bestGifts-items">
+<div class="bestGift-card">
+    <img class="bestGift-image" src="./public/images/gift-for-work.png" alt="gift-for-work">
+    <div class="card-text">
+        <p class="header4">For work</p>
+        <p class="header3">Console.log Guru</p>
+    </div>
+
+</div>
+<div class="bestGift-card">
+    <img class="bestGift-image" src="./public/images/gift-for-health.png" alt="gift-for-health">
+    <div class="card-text">
+        <p class="header4">For health</p>
+        <p class="header3">Hydration Bot</p>
+    </div>
+</div>
+<div class="bestGift-card">
+    <img class="bestGift-image" src="./public/images/gift-for-work.png" alt="gift-for-work">
+    <div class="card-text">
+        <p class="header4">For work</p>
+        <p class="header3">Merge Master</p>
+    </div>
+</div>
+<div class="bestGift-card">
+    <img class="bestGift-image" src="./public/images/gift-for-harmony.png" alt="gift-for-harmony">
+    <div class="card-text">
+        <p class="header4">For harmony</p>
+        <p class="header3">Spontaneous Coding Philosopher</p>
+    </div>
+</div>
+    </div>
+
+</section>
+<section id="cta" class="wrapper">
+    <div class="cta-content">
+
+        <p class="header2">Ready to start your journey to a better version of yourself?</p>
+        <button class="actionSmall btn-primary">Explore Magical Gifts</button>
+       <div class="cta-container">
+           <p class="caption">The New Year is Coming Soon...</p>  
+           <div class="cta-timer">
+            
+            <div class="timer-item">
+                <p class="header2" id="days">47</p>
+                <p class="header4">days</p>
+            </div>
+            <div class="timer-item">
+                <p class="header2" id="hours">5</p>
+                <p class="header4">hours</p>
+            </div>
+            <div class="timer-item">
+                <p class="header2" id="minutes">34</p>
+                <p class="header4">minutes</p>
+            </div>
+            <div class="timer-item">
+                <p class="header2" id="seconds">12</p>
+                <p class="header4">seconds</p>
+            </div>
+        
+        </div>  
+        </div>
+    </div>
+   
+</section>
+
 </main>
 
 <footer class="wrapper" id="contacts">

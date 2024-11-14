@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -13,7 +15,8 @@ h2,
 h3,
 p,
 li,
-a {
+a,
+div {
   margin: 0;
   padding: 0;
 }
@@ -95,7 +98,7 @@ li {
 }
 
 .sliderText {
-  font-size: 3.75rem;
+  font-size: 5rem;
   font-weight: 600;
   line-height: normal;
   letter-spacing: 0rem;
@@ -216,18 +219,17 @@ footer {
   align-items: center;
   justify-content: center;
 }
+.contacts-social.paragraph:hover,
+.contacts-social .caption:hover {
+  color: var(--color-primary);
+  cursor: pointer;
+}
 
 .icon {
   display: block;
 }
 .icon:hover path {
   stroke: var(--color-primary);
-}
-
-.paragraph:hover,
-.caption:hover {
-  color: var(--color-primary);
-  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

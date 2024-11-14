@@ -112,6 +112,11 @@ footer {
       justify-content: center;
     }
   }
+  &.paragraph:hover,
+  .caption:hover {
+    color: var(--color-primary);
+    cursor: pointer;
+  }
 }
 
 .icon {
@@ -119,10 +124,4 @@ footer {
   &:hover path {
     stroke: var(--color-primary);
   }
-}
-
-.paragraph:hover,
-.caption:hover {
-  color: var(--color-primary);
-  cursor: pointer;
 }

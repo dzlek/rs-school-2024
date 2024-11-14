@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -13,7 +15,8 @@ h2,
 h3,
 p,
 li,
-a {
+a,
+div {
   margin: 0;
   padding: 0;
 }
