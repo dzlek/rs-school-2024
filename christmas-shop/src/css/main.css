@@ -165,8 +165,11 @@ header {
 .menu a {
   padding: 12px 20px;
 }
-.menu a:hover {
+.menu a:not(.disabled):hover {
   color: var(--color-primary);
+}
+.menu a.disabled {
+  pointer-events: none;
 }
 
 main {
