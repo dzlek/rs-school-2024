@@ -228,11 +228,10 @@ footer {
   color: var(--color-primary);
   cursor: pointer;
 }
-
-.icon {
+.contacts-social .icon {
   display: block;
 }
-.icon:hover path {
+.contacts-social .icon:hover path {
   stroke: var(--color-primary);
 }
 

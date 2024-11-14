@@ -40,6 +40,9 @@ main {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  & .caption {
+    color: var(--color-primary);
+  }
 }
 
 .about-container {
