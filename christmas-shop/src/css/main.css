@@ -145,6 +145,7 @@ header {
 
 .logo a {
   padding: 8px 20px;
+  border-radius: 12px;
   display: flex;
   gap: 8px;
   justify-content: center;
@@ -152,6 +153,7 @@ header {
 }
 .logo a:hover {
   color: var(--color-primary);
+  background-color: var(--color-primary-10);
 }
 
 .menu > ul {
@@ -164,8 +166,10 @@ header {
 
 .menu a {
   padding: 12px 20px;
+  border-radius: 12px;
 }
 .menu a:not(.disabled):hover {
+  background-color: var(--color-primary-10);
   color: var(--color-primary);
 }
 .menu a.disabled {
