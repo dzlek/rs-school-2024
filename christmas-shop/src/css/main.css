@@ -152,8 +152,7 @@ header {
   align-items: center;
 }
 .logo a:hover {
-  color: var(--color-primary);
-  background-color: var(--color-primary-10);
+  cursor: pointer;
 }
 
 .menu > ul {
@@ -174,6 +173,7 @@ header {
 }
 .menu a.disabled {
   pointer-events: none;
+  color: var(--color-primary);
 }
 
 main {

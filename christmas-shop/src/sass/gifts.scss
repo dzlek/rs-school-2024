@@ -1,7 +1,7 @@
-@import "base";
-@import "typography";
-@import "colors";
-@import "button";
+@use "base";
+@use "typography";
+@use "colors";
+@use "button";
 
 #gifts {
   background-image: url("../../public/images/bg-garland.png");
