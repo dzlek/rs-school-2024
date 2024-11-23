@@ -9,7 +9,7 @@
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: $line-height;
-  letter-spacing: $font-size * ($letter-spacing / 100%);
+  letter-spacing: $font-size * calc($letter-spacing / 100%);
   text-transform: $text-transform;
   font-family: $font-family;
 }
