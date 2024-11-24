@@ -2,6 +2,7 @@
 @use "typography";
 @use "colors";
 @use "button";
+@use "main" as main;
 
 #hero {
   padding: 60px 0;
@@ -48,6 +49,7 @@
 }
 
 .about-text {
+  width: 50%;
   padding-top: 60px;
   padding-bottom: 60px;
   display: flex;
@@ -57,10 +59,18 @@
   margin-top: 100px;
   margin-bottom: 100px;
   max-width: 426px;
+  @media (min-width: main.$tablet-min) and (max-width: main.$tablet-max) {
+    max-width: 256px;
+    margin: 46px 60px;
+  }
 }
 
 .about-image {
+  width: 50%;
   border-radius: 20px;
+  background-image: url("../../public/images/santa.png");
+  background-position: center;
+  background-size: cover;
 }
 
 #slider {

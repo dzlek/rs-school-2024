@@ -1,6 +1,6 @@
-@use "base";
 @use "typography";
 @use "colors";
+@use "base";
 
 $tablet-min: 768px;
 $tablet-max: 1060px;
@@ -14,6 +14,9 @@ body {
 
 .wrapper {
   padding: 60px 82px;
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+    padding: 60px 8px;
+  }
 }
 
 header {
@@ -23,6 +26,9 @@ header {
   justify-content: space-between;
   background-color: var(--color-static-white);
   padding: 12px 82px;
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+    padding: 12px 8px;
+  }
 }
 
 .logo a {
@@ -55,6 +61,61 @@ header {
   &.disabled {
     pointer-events: none;
     color: var(--color-primary);
+  }
+}
+
+.menu-toggle {
+  width: 40px;
+  height: 40px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+
+  .line {
+    width: 21px;
+    height: 2px;
+    background-color: var(--color-primary);
+
+    transition: all 0.3s ease;
+    position: absolute;
+  }
+
+  .line:nth-child(1) {
+    top: 15px;
+  }
+  .line:nth-child(2) {
+    top: 23px;
+  }
+
+  &.active {
+    .line {
+      background-color: var(--color-primary-dark);
+    }
+
+    .line:nth-child(1) {
+      top: 18px;
+      transform: rotate(45deg);
+    }
+    .line:nth-child(2) {
+      top: 18px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@media (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .menu {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 }
 
@@ -91,6 +152,7 @@ footer {
     flex: 1;
     &:hover {
       color: var(--color-primary);
+      background-color: var(--color-primary-10);
     }
   }
 
@@ -154,6 +216,9 @@ footer {
 .bestGifts-items {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 12px;
 }
 
