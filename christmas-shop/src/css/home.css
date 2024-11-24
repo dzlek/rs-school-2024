@@ -75,7 +75,7 @@ li {
   font-family: "Montserrat", sans-serif;
 }
 
-.actionLarge, .contacts-items p {
+.actionLarge, .menu.active a, .contacts-items p {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 152%;
@@ -223,6 +223,32 @@ header {
   cursor: pointer;
 }
 
+.menu {
+  display: flex;
+}
+@media (max-width: 1060px) {
+  .menu {
+    display: none;
+  }
+}
+.menu.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-static-white);
+  z-index: 10;
+  overflow: hidden;
+}
+.menu.active ul {
+  flex-direction: column;
+  gap: 32px;
+}
 .menu > ul {
   display: flex;
   flex-direction: row;
@@ -244,7 +270,7 @@ header {
   color: var(--color-primary);
 }
 
-.menu-toggle {
+.menu-btn-burger {
   width: 40px;
   height: 40px;
   display: none;
@@ -257,39 +283,33 @@ header {
   position: relative;
   z-index: 20;
 }
-.menu-toggle .line {
+.menu-btn-burger .line {
   width: 21px;
   height: 2px;
-  background-color: var(--color-primary);
+  background-color: var(--color-dark);
   transition: all 0.3s ease;
   position: absolute;
 }
-.menu-toggle .line:nth-child(1) {
+.menu-btn-burger .line:nth-child(1) {
   top: 15px;
 }
-.menu-toggle .line:nth-child(2) {
+.menu-btn-burger .line:nth-child(2) {
   top: 23px;
 }
-.menu-toggle.active .line {
-  background-color: var(--color-primary-dark);
+@media (max-width: 1060px) {
+  .menu-btn-burger {
+    display: flex;
+  }
 }
-.menu-toggle.active .line:nth-child(1) {
+.menu-btn-burger.active .line:nth-child(1) {
   top: 18px;
   transform: rotate(45deg);
 }
-.menu-toggle.active .line:nth-child(2) {
+.menu-btn-burger.active .line:nth-child(2) {
   top: 18px;
   transform: rotate(-45deg);
 }
 
-@media (min-width: 768px) and (max-width: 1060px) {
-  .menu {
-    display: none;
-  }
-  .menu-toggle {
-    display: flex;
-  }
-}
 main {
   background-color: var(--color-primary);
   border-radius: 20px;
@@ -420,6 +440,10 @@ footer {
   flex-direction: column;
   text-align: start;
   gap: 10px;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 #hero {
