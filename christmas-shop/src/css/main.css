@@ -100,6 +100,10 @@
   scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+  width: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -130,7 +134,7 @@ body {
 .wrapper {
   padding: 60px 82px;
 }
-@media (min-width: 768px) and (max-width: 1060px) {
+@media (max-width: 1060px) {
   .wrapper {
     padding: 60px 8px;
   }
@@ -144,7 +148,7 @@ header {
   background-color: var(--color-static-white);
   padding: 12px 82px;
 }
-@media (min-width: 768px) and (max-width: 1060px) {
+@media (max-width: 1060px) {
   header {
     padding: 12px 8px;
   }

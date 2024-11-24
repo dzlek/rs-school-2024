@@ -5,6 +5,10 @@
   scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+  width: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -121,63 +125,6 @@ li {
   --color-overlay: rgba(24, 28, 41, 0.8);
 }
 
-button {
-  background-color: var(--color-dark);
-  color: var(--color-static-white);
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 100ms ease;
-}
-
-button:disabled {
-  pointer-events: none;
-}
-
-.btn-primary {
-  padding: 20px 32px;
-  background-color: var(--color-dark);
-  color: var(--color-static-white);
-  border: none;
-}
-.btn-primary:hover {
-  background-color: var(--color-static-white);
-  color: var(--color-dark);
-}
-
-.btn-slider {
-  height: 56px;
-  width: 56px;
-  background-color: transparent;
-  color: var(--color-static-white);
-  border: 1px var(--color-static-white) solid;
-}
-.btn-slider:hover {
-  background-color: var(--color-static-white);
-  color: var(--color-dark);
-}
-.btn-slider:hover path {
-  stroke: var(--color-primary);
-}
-.btn-slider:disabled {
-  border: 1px var(--color-static-white-40) solid;
-}
-
-.btn-tab {
-  padding: 12px 20px;
-  background-color: transparent;
-  color: var(--color-static-white);
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-}
-.btn-tab:hover {
-  background-color: var(--color-static-white-20);
-}
-.btn-tab.active {
-  background-color: var(--color-static-white-20);
-  pointer-events: none;
-}
-
 body {
   margin: 0 auto;
   max-width: 1440px;
@@ -187,7 +134,7 @@ body {
 .wrapper {
   padding: 60px 82px;
 }
-@media (min-width: 768px) and (max-width: 1060px) {
+@media (max-width: 1060px) {
   .wrapper {
     padding: 60px 8px;
   }
@@ -201,7 +148,7 @@ header {
   background-color: var(--color-static-white);
   padding: 12px 82px;
 }
-@media (min-width: 768px) and (max-width: 1060px) {
+@media (max-width: 1060px) {
   header {
     padding: 12px 8px;
   }
@@ -442,6 +389,68 @@ footer {
   overflow: hidden;
 }
 
+button {
+  background-color: var(--color-dark);
+  color: var(--color-static-white);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 100ms ease;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
+.btn-primary {
+  padding: 20px 32px;
+  background-color: var(--color-dark);
+  color: var(--color-static-white);
+  border: none;
+}
+.btn-primary:hover {
+  background-color: var(--color-static-white);
+  color: var(--color-dark);
+}
+
+.btn-slider {
+  height: 56px;
+  width: 56px;
+  background-color: transparent;
+  color: var(--color-static-white);
+  border: 1px var(--color-static-white) solid;
+}
+.btn-slider:hover {
+  background-color: var(--color-static-white);
+  color: var(--color-dark);
+}
+.btn-slider:hover path {
+  stroke: var(--color-primary);
+}
+.btn-slider:disabled {
+  border: 1px var(--color-static-white-40) solid;
+}
+
+.btn-tab {
+  padding: 12px 20px;
+  background-color: transparent;
+  color: var(--color-static-white);
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+.btn-tab:hover {
+  background-color: var(--color-static-white-20);
+}
+.btn-tab.active {
+  background-color: var(--color-static-white-20);
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .btn-tab {
+    padding: 12px 8px;
+  }
+}
+
 #hero {
   padding: 60px 0;
   margin: 0;
@@ -484,6 +493,12 @@ footer {
   flex-direction: row;
   justify-content: space-between;
 }
+@media (max-width: 767px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .about-text {
   width: 50%;
@@ -503,6 +518,16 @@ footer {
     margin: 46px 60px;
   }
 }
+@media (max-width: 767px) {
+  .about-text {
+    width: 100%;
+    max-width: 324px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
 
 .about-image {
   width: 50%;
@@ -510,6 +535,12 @@ footer {
   background-image: url("../../public/images/santa.png");
   background-position: center;
   background-size: cover;
+}
+@media (max-width: 767px) {
+  .about-image {
+    width: 100%;
+    height: 528px;
+  }
 }
 
 #slider {
