@@ -4,10 +4,10 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
-body::-webkit-scrollbar {
-  width: 0;
-}
+//FIX: rm before deploy
+// body::-webkit-scrollbar {
+//   width: 0;
+// }
 
 a {
   text-decoration: none;

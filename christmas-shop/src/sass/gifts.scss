@@ -2,6 +2,7 @@
 @use "typography";
 @use "colors";
 @use "button";
+@use "main" as main;
 
 #gifts {
   background-image: url("../../public/images/bg-garland.png");
@@ -37,8 +38,8 @@
   gap: 8px;
 }
 
-.bestGifts-items {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
+// .bestGifts-items {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   gap: 12px;
+// }
