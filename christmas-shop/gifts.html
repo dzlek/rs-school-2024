@@ -14,14 +14,17 @@
 </head>
 
 <body>
-<!-- https://www.figma.com/design/MkTvRUSlpZGOHH6Kq223Nn/Christmas-Shop-(Copy)?node-id=0-1&node-type=canvas&t=h3rsBm1es0AdLonK-0 -->
-<!-- https://github.com/rolling-scopes-school/tasks/blob/master/tasks/christmas-shop/christmas-shop-part2.md -->
+
 <header>
     <div class="logo ">
         <a href="index.html">
             <img src="./public/assets/logo.svg" alt="Christmas Shop Logo" height="24" width="24"><p class="actionSmall">the gifts</p>
         </a>
     </div>
+    <button class="menu-btn-burger">
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
     <div class="menu actionSmall">
             <ul>
                 <li><a href="gifts.html" class="disabled">Gifts</a></li>
@@ -37,10 +40,10 @@
 <div class="gifts-content">
 <h1 class="header1">Achieve health, harmony, and inner strength</h1>
 <div class="gifts-tabs">
-    <button class="btn-tab actionSmall active">All</button>
-    <button class="btn-tab actionSmall">for work</button>
-    <button class="btn-tab actionSmall">for health</button>
-    <button class="btn-tab actionSmall">for harmony</button>
+    <button class="btn-tab actionSmall active" data-type="all">All</button>
+    <button class="btn-tab actionSmall" data-type="work">for work</button>
+    <button class="btn-tab actionSmall" data-type="health">for health</button>
+    <button class="btn-tab actionSmall" data-type="harmony">for harmony</button>
 </div>
 
 <div class="bestGifts-items">
@@ -156,7 +159,7 @@
         <div class="contacts-items">
             <a href="tel:+375(29)111-22-33"><img src="./public/images/santa-claus.png" alt="santa-claus"><p>+375 (29) 111-22-33</p> <h3>Call Us</h3> </a>
             <a href="https://maps.app.goo.gl/Nw3sAxoFKUbgT17o9" target="_blank"><img src="./public/images/christmas-tree.png" alt="christmas-tree"><p>Magic forest</p> <h3>meet us</h3> </a>
-            <a href="mailto:4mK4o@example.com"><img src="./public/images/snake.png" alt="snake"><p>Magic forest</p> <h3>write us</h3> </a>
+            <a href="mailto:4mK4o@example.com"><img src="./public/images/snake.png" alt="snake"><p>gifts@magic.com</p> <h3>write us</h3> </a>
         </div>
     </div>
     <div class="contacts-social">

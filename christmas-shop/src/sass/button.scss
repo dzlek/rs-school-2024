@@ -1,3 +1,5 @@
+@use "main" as main;
+
 button {
   background-color: var(--color-dark);
   color: var(--color-static-white);
@@ -53,5 +55,9 @@ button:disabled {
   &.active {
     background-color: var(--color-static-white-20);
     pointer-events: none;
+  }
+
+  @media (max-width: main.$mobile-max) {
+    padding: 12px 8px;
   }
 }
