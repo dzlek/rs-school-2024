@@ -74,8 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("minutes").textContent = minutes;
     document.getElementById("seconds").textContent = seconds;
   }
-
-  setInterval(updateTimer, 1000);
-
-  updateTimer();
+  if (document.body.dataset.page === "index") {
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  }
 });
