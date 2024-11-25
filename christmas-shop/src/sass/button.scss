@@ -17,6 +17,7 @@ button:disabled {
   background-color: var(--color-dark);
   color: var(--color-static-white);
   border: none;
+
   &:hover {
     background-color: var(--color-static-white);
     color: var(--color-dark);

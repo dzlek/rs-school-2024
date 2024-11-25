@@ -279,6 +279,7 @@ footer {
   flex-direction: column;
   gap: 12px;
   padding: 20px;
+  width: 100%;
   align-items: center;
   background-color: var(--color-content-background);
   border-radius: 20px;
