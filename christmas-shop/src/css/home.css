@@ -125,6 +125,29 @@ li {
   --color-overlay: rgba(24, 28, 41, 0.8);
 }
 
+@media (hover: none) {
+  a:hover,
+  button:hover,
+  .btn-primary:hover,
+  .btn-slider :hover,
+  .btn-tab:hover,
+  .menu a:hover,
+  .paragraph:hover,
+  .card:hover,
+  .icon:hover,
+  .contacts-items a:hover,
+  .caption:hover {
+    color: inherit !important;
+    border-color: inherit !important;
+    text-decoration: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+    cursor: inherit !important;
+  }
+  .bestGift-card:hover .header3, .bestGift-card:hover .contacts-items h3, .contacts-items .bestGift-card:hover h3 {
+    color: var(--color-dark) !important;
+  }
+}
 body {
   margin: 0 auto;
   max-width: 1440px;

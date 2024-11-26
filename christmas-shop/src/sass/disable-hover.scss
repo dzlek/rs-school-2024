@@ -1,0 +1,28 @@
+@use "colors" as colors;
+
+@media (hover: none) {
+  a:hover,
+  button:hover,
+  .btn-primary:hover,
+  .btn-slider :hover,
+  .btn-tab:hover,
+  .menu a:hover,
+  .paragraph:hover,
+  .card:hover,
+  .icon:hover,
+  .contacts-items a:hover,
+  .caption:hover {
+    // padding: inherit !important;
+    color: inherit !important;
+    border-color: inherit !important;
+    // background-color: inherit !important;
+    text-decoration: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+    cursor: inherit !important;
+  }
+
+  .bestGift-card:hover .header3 {
+    color: var(--color-dark) !important;
+  }
+}

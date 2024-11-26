@@ -1,4 +1,5 @@
 @use "main" as main;
+@use "disable-hover";
 
 button {
   background-color: var(--color-dark);
