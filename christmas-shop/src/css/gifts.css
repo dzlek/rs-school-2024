@@ -5,10 +5,6 @@
   scroll-behavior: smooth;
 }
 
-body::-webkit-scrollbar {
-  width: 0;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -279,12 +275,20 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 20px;
+  padding: 20px auto;
   width: 100%;
   align-items: center;
   background-color: var(--color-content-background);
   border-radius: 20px;
-  flex: 1;
+}
+.contacts-items a:nth-of-type(1) {
+  flex-shrink: 1;
+}
+.contacts-items a:nth-of-type(2) {
+  flex-shrink: 1.15;
+}
+.contacts-items a:nth-of-type(3) {
+  flex-shrink: 1;
 }
 .contacts-items a:hover {
   color: var(--color-primary);
@@ -294,6 +298,9 @@ footer {
   height: 80px;
   width: 80px;
   margin: 0 auto;
+}
+.contacts-items p {
+  white-space: nowrap;
 }
 @media (min-width: 768px) and (max-width: 1060px) {
   .contacts-items {
@@ -350,7 +357,7 @@ footer {
 .bestGift-card {
   width: 310px;
   height: 342px;
-  background-color: var(--color-static-white);
+  background-color: var(--color-content-background);
   border-radius: 20px;
 }
 .bestGift-card .header3, .bestGift-card .contacts-items h3, .contacts-items .bestGift-card h3 {
