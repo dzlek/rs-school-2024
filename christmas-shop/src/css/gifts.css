@@ -127,10 +127,6 @@ li {
 
 @media (hover: none) {
   a:hover,
-  button:hover,
-  .btn-primary:hover,
-  .btn-slider :hover,
-  .btn-tab:hover,
   .menu a:hover,
   .paragraph:hover,
   .card:hover,
@@ -146,6 +142,17 @@ li {
   }
   .bestGift-card:hover .header3, .bestGift-card:hover .contacts-items h3, .contacts-items .bestGift-card:hover h3 {
     color: var(--color-dark) !important;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-dark) !important;
+    color: var(--color-static-white) !important;
+  }
+  .btn-slider:hover {
+    background-color: transparent !important;
+    color: var(--color-static-white) !important;
+  }
+  .btn-slider:hover path {
+    stroke: var(--color-static-white) !important;
   }
 }
 body {

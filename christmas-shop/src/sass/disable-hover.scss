@@ -2,10 +2,6 @@
 
 @media (hover: none) {
   a:hover,
-  button:hover,
-  .btn-primary:hover,
-  .btn-slider :hover,
-  .btn-tab:hover,
   .menu a:hover,
   .paragraph:hover,
   .card:hover,
@@ -25,4 +21,23 @@
   .bestGift-card:hover .header3 {
     color: var(--color-dark) !important;
   }
+  //   button:hover {
+  //     background-color: var(--color-dark) !important;
+  //     color: var(--color-static-white) !important;
+  //   }
+  .btn-primary:hover {
+    background-color: var(--color-dark) !important;
+    color: var(--color-static-white) !important;
+  }
+  .btn-slider:hover {
+    background-color: transparent !important;
+    color: var(--color-static-white) !important;
+    path {
+      stroke: var(--color-static-white) !important;
+    }
+  }
+  //   .btn-tab:hover {
+  //     background-color: transparent !important;
+  //     color: var(--color-static-white) !important;
+  //   }
 }
