@@ -75,7 +75,7 @@ li {
   font-family: "Montserrat", sans-serif;
 }
 
-.actionLarge, .menu.active a, .contacts-items p {
+.actionLarge, .menu.active, .contacts-items p {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 152%;
@@ -169,37 +169,38 @@ header {
 .menu {
   display: flex;
 }
+.menu.active {
+  transform: translateX(0);
+}
 @media (max-width: 1060px) {
   .menu {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 64px;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 64px);
+    background-color: var(--color-static-white);
+    transform: translateX(100%);
+    transition: transform 200ms ease;
+    z-index: 10;
   }
 }
-.menu.active {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 64px;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: var(--color-static-white);
-  z-index: 10;
-  overflow: hidden;
-}
-.menu.active ul {
-  flex-direction: column;
-  gap: 32px;
-}
-.menu > ul {
+.menu ul {
   display: flex;
   flex-direction: row;
   gap: 8px;
   align-items: center;
   justify-content: center;
 }
-
+@media (max-width: 1060px) {
+  .menu ul {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
 .menu a {
   padding: 12px 20px;
   border-radius: 12px;
@@ -395,7 +396,7 @@ button {
   color: var(--color-static-white);
   border-radius: 20px;
   cursor: pointer;
-  transition: background-color 100ms ease;
+  transition: background-color 200ms ease;
 }
 
 button:disabled {

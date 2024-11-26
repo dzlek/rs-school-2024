@@ -5,7 +5,7 @@ button {
   color: var(--color-static-white);
   border-radius: 20px;
   cursor: pointer;
-  transition: background-color 100ms ease;
+  transition: background-color main.$transition-time ease;
 }
 
 button:disabled {
