@@ -127,18 +127,20 @@ li {
 
 @media (hover: none) {
   a:hover,
-  .menu a:hover,
   .paragraph:hover,
   .card:hover,
-  .icon:hover,
-  .contacts-items a:hover,
   .caption:hover {
-    color: inherit !important;
-    border-color: inherit !important;
-    text-decoration: none !important;
-    transform: none !important;
-    box-shadow: none !important;
-    cursor: inherit !important;
+    background-color: var(--color-content-background) !important;
+    color: var(--color-dark) !important;
+  }
+  .menu a:hover {
+    background-color: var(--color-content-background) !important;
+  }
+  .contacts-items a:hover {
+    background-color: var(--color-content-background) !important;
+  }
+  .contacts-social .icon:hover path {
+    stroke: var(--color-dark) !important;
   }
   .bestGift-card:hover .header3, .bestGift-card:hover .contacts-items h3, .contacts-items .bestGift-card:hover h3 {
     color: var(--color-dark) !important;
@@ -309,20 +311,14 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding: 20px auto;
   width: 100%;
   align-items: center;
   background-color: var(--color-content-background);
   border-radius: 20px;
-}
-.contacts-items a:nth-of-type(1) {
-  flex-shrink: 1;
-}
-.contacts-items a:nth-of-type(2) {
-  flex-shrink: 1.15;
-}
-.contacts-items a:nth-of-type(3) {
-  flex-shrink: 1;
+  flex: 1;
 }
 .contacts-items a:hover {
   color: var(--color-primary);

@@ -2,29 +2,33 @@
 
 @media (hover: none) {
   a:hover,
-  .menu a:hover,
   .paragraph:hover,
   .card:hover,
-  .icon:hover,
-  .contacts-items a:hover,
   .caption:hover {
-    // padding: inherit !important;
-    color: inherit !important;
-    border-color: inherit !important;
-    // background-color: inherit !important;
-    text-decoration: none !important;
-    transform: none !important;
-    box-shadow: none !important;
-    cursor: inherit !important;
+    // color: inherit !important;
+    // border-color: inherit !important;
+    // text-decoration: none !important;
+    // transform: none !important;
+    // box-shadow: none !important;
+    // cursor: inherit !important;
+    background-color: var(--color-content-background) !important;
+    color: var(--color-dark) !important;
+  }
+  .menu a:hover {
+    background-color: var(--color-content-background) !important;
+  }
+  .contacts-items a:hover {
+    background-color: var(--color-content-background) !important;
+  }
+
+  .contacts-social .icon:hover path {
+    stroke: var(--color-dark) !important;
   }
 
   .bestGift-card:hover .header3 {
     color: var(--color-dark) !important;
   }
-  //   button:hover {
-  //     background-color: var(--color-dark) !important;
-  //     color: var(--color-static-white) !important;
-  //   }
+
   .btn-primary:hover {
     background-color: var(--color-dark) !important;
     color: var(--color-static-white) !important;
@@ -36,8 +40,4 @@
       stroke: var(--color-static-white) !important;
     }
   }
-  //   .btn-tab:hover {
-  //     background-color: transparent !important;
-  //     color: var(--color-static-white) !important;
-  //   }
 }
