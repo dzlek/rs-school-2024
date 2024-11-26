@@ -78,4 +78,48 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(updateTimer, 1000);
     updateTimer();
   }
+  // Slider items находятся внутри контейнера. Мы будем двигать items внутри контейнера
+
+  const sliderContainer = document.querySelector(".slider-container");
+  const sliderItems = document.querySelector(".slider-items");
+  const btnLeft = document.querySelector("#btn-left");
+  const btnRight = document.querySelector("#btn-right");
+
+  const sliderContainerWidth = sliderContainer.scrollWidth; // общая длинна TotalWidth
+  console.log("TotalWidth", sliderContainerWidth);
+  const sliderItemsWidth = sliderItems.offsetWidth; // видим visibleArea
+  console.log("visibleArea", sliderItemsWidth);
+  const screenWidth = window.innerWidth;
+  console.log("ширина", screenWidth); // ширина экрана
+
+  let numberOfClicks = screenWidth >= 768 ? 3 : 6;
+  let step = (sliderContainerWidth - sliderItemsWidth) / numberOfClicks;
+  let currentPosition = 0;
+  btnLeft.disabled = true;
+
+  btnRight.addEventListener("click", () => {
+    currentPosition += step;
+    console.log(currentPosition);
+    sliderItems.style.transform = `translateX(-${currentPosition}px)`;
+    btnLeft.disabled = false;
+    if (currentPosition >= sliderContainerWidth - sliderItemsWidth) {
+      btnRight.disabled = true;
+    }
+  });
+
+  btnLeft.addEventListener("click", () => {
+    currentPosition -= step;
+    console.log(currentPosition);
+    sliderItems.style.transform = `translateX(-${
+      currentPosition < 0 ? 0 : currentPosition
+    }px)`;
+    btnRight.disabled = false;
+    if (currentPosition <= 0) {
+      btnLeft.disabled = true;
+    }
+  });
+
+  //
+  //
+  //
 });
