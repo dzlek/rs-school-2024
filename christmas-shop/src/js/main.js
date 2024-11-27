@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       body.classList.remove("no-scroll");
     });
   });
+
   // Tabs switcher
 
   function tabSwitcher() {
@@ -150,7 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.dataset.page === "index" ? 4 : data.length;
 
       const gifts = getRandomGifts(data, numberOfGifts);
-      console.log(gifts);
       renderGifts(gifts); // для отображения данных
       tabSwitcher(); // для запуска табов
     } catch (error) {
@@ -192,4 +192,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   fetchData();
+
+  //Scroll-to-Top
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.innerWidth <= 768 && window.scrollY > 300) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  });
+
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 });
