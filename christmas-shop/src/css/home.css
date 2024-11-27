@@ -392,6 +392,12 @@ footer {
 }
 .bestGift-card .header3, .bestGift-card .contacts-items h3, .contacts-items .bestGift-card h3 {
   color: var(--color-dark);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 .bestGift-card .bestGift-image {
   height: 230px;

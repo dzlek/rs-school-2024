@@ -21,27 +21,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   // Tabs switcher
-  const tabItems = document.querySelectorAll(".btn-tab");
-  const bestGiftCards = document.querySelectorAll(".bestGift-card");
 
-  tabItems.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabItems.forEach((item) => item.classList.remove("active"));
+  function tabSwitcher() {
+    const tabItems = document.querySelectorAll(".btn-tab");
+    const bestGiftCards = document.querySelectorAll(".bestGift-card");
 
-      tab.classList.add("active");
+    tabItems.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabItems.forEach((item) => item.classList.remove("active"));
+        tab.classList.add("active");
 
-      const tabType = tab.dataset.type;
+        const tabType = tab.dataset.type;
 
-      bestGiftCards.forEach((card) => {
-        const header4Class = card.querySelector(".header4").classList[1];
-        if (tabType === "all" || header4Class === tabType) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
+        bestGiftCards.forEach((card) => {
+          const header4 = card.querySelector(".header4");
+          const header4Class =
+            header4.classList.length > 1 ? header4.classList[1] : "";
+
+          if (tabType === "all" || header4Class === tabType) {
+            card.hidden = false;
+          } else {
+            card.hidden = true;
+          }
+        });
       });
     });
-  });
+  }
 
   // New Year Timer
   function getNextNewYearDate() {
@@ -130,22 +135,61 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
   }
-  //Random gifts
-  // function fetchData() {
-  //   fetch("/data/gifts.json")
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error("Ошибка при загрузке данных");
-  //       }
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       console.log(data); // Данные из gifts.json
-  //     })
-  //     .catch((error) => {
-  //       console.error("Ошибка:", error);
-  //     });
-  // }
 
-  // fetchData();
+  //Random gifts
+
+  async function fetchData() {
+    try {
+      const response = await fetch("/public/data/gifts.json");
+      //тоже можно https://api.github.com/repos/rolling-scopes-school/tasks/contents/tasks/christmas-shop/gifts.json
+      if (!response.ok) {
+        throw new Error("Error fetching data...");
+      }
+      const data = await response.json();
+      const numberOfGifts =
+        document.body.dataset.page === "index" ? 4 : data.length;
+
+      const gifts = getRandomGifts(data, numberOfGifts);
+      console.log(gifts);
+      renderGifts(gifts); // для отображения данных
+      tabSwitcher(); // для запуска табов
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+  function getRandomGifts(data, numberOfGifts) {
+    const selectedGifts = [];
+    const usedIndices = new Set();
+
+    while (selectedGifts.length < numberOfGifts) {
+      const randomIndex = Math.floor(Math.random() * data.length);
+      if (!usedIndices.has(randomIndex)) {
+        selectedGifts.push(data[randomIndex]);
+        usedIndices.add(randomIndex);
+      }
+    }
+    return selectedGifts;
+  }
+
+  function renderGifts(gifts) {
+    const container = document.querySelector(".bestGifts-items");
+
+    gifts.forEach((gift) => {
+      const card = document.createElement("div");
+      card.classList.add("bestGift-card");
+      const type = (gift.category.split(" ")[1] || "").toLowerCase();
+
+      card.innerHTML = `
+      <img class="bestGift-image" src="./public/images/gift-for-${type}.png" alt="gift-for-${type}">
+      <div class="card-text">
+          <p class="header4 ${type}">${gift.category}</p>
+          <p class="header3">${gift.name}</p>
+      </div>
+ `;
+      container.appendChild(card);
+    });
+  }
+
+  fetchData();
 });
