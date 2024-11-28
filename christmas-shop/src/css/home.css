@@ -557,6 +557,9 @@ button:disabled {
   color: var(--color-static-white);
   border: 1px var(--color-static-white) solid;
 }
+.btn-slider path {
+  stroke: var(--color-static-white);
+}
 .btn-slider:hover {
   background-color: var(--color-static-white);
   color: var(--color-dark);
@@ -566,6 +569,9 @@ button:disabled {
 }
 .btn-slider:disabled {
   border: 1px var(--color-static-white-40) solid;
+}
+.btn-slider:disabled path {
+  stroke: var(--color-static-white-40);
 }
 
 .btn-tab {

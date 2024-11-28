@@ -142,9 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function fetchData() {
     try {
-      const response = await fetch(
-        "https://rolling-scopes-school.github.io/dzlek-JSFE2024Q4/christmas-shop/public/data/gifts.json"
-      );
+      const response = await fetch("public/data/gifts.json");
 
       if (!response.ok) {
         throw new Error("Error fetching data...");

@@ -29,8 +29,12 @@ button:disabled {
   height: 56px;
   width: 56px;
   background-color: transparent;
+  // background-color: var(--color-primary);
   color: var(--color-static-white);
   border: 1px var(--color-static-white) solid;
+  path {
+    stroke: var(--color-static-white);
+  }
   &:hover {
     background-color: var(--color-static-white);
     color: var(--color-dark);
@@ -41,6 +45,9 @@ button:disabled {
 
   &:disabled {
     border: 1px var(--color-static-white-40) solid;
+    path {
+      stroke: var(--color-static-white-40);
+    }
   }
 }
 
