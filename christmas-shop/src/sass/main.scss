@@ -2,9 +2,10 @@
 @use "colors";
 @use "base";
 @use "disable-hover";
+@use "modal";
 
-$tablet-min: 768px;
 $tablet-max: 1060px;
+$tablet-min: 768px;
 $mobile-max: 767px;
 
 $transition-time: 200ms;
@@ -305,18 +306,4 @@ footer {
 
 .no-scroll {
   overflow: hidden;
-}
-
-.scroll-to-top {
-  position: fixed;
-  bottom: 8px;
-  right: 8px;
-  height: 56px;
-  width: 56px;
-  display: none;
-  background-color: var(--color-static-white);
-  border: 1px solid var(--color-primary);
-  border-radius: 28px;
-  cursor: pointer;
-  z-index: 900;
 }

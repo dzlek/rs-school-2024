@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnRight = document.querySelector("#btn-right");
 
     btnLeft.disabled = true;
+    let currentPosition = 0;
     window.onload = () => {
       const sliderContainer = document.querySelector(".slider-container");
       const sliderContainerWidth = sliderContainer.scrollWidth;
@@ -103,14 +104,14 @@ document.addEventListener("DOMContentLoaded", () => {
       let step = (sliderContainerWidth - sliderItemsWidth) / numberOfClicks;
 
       window.addEventListener("resize", () => {
+        currentPosition = 0; //if remove working correctly, added according task
+        sliderItems.style.transform = `translateX(-${currentPosition})`; //if remove working correctly, added according task
         screenWidth = window.innerWidth;
         numberOfClicks = screenWidth >= 768 ? 3 : 6;
         sliderItemsWidth = sliderItems.offsetWidth;
         step = (sliderContainerWidth - sliderItemsWidth) / numberOfClicks;
         updateButtons();
       });
-
-      let currentPosition = 0;
 
       function updateButtons() {
         btnLeft.disabled = currentPosition <= 0;
@@ -142,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchData() {
     try {
       const response = await fetch("/public/data/gifts.json");
-      //тоже можно https://api.github.com/repos/rolling-scopes-school/tasks/contents/tasks/christmas-shop/gifts.json
+
       if (!response.ok) {
         throw new Error("Error fetching data...");
       }
@@ -187,11 +188,107 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="header3">${gift.name}</p>
       </div>
  `;
+      card.addEventListener("click", () => openModal(gift, type));
       container.appendChild(card);
     });
   }
 
   fetchData();
+  //Modal start
+  function openModal(gift, type) {
+    document.body.classList.add("no-scroll");
+
+    const modal = document.getElementById("modal");
+    modal.style.display = "flex";
+
+    modal.innerHTML = `
+    <div class="modal-content">
+    <span class="close-btn"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 10L10 30" stroke="#181C29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 10L30 30" stroke="#181C29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></span>
+        <div class="modal-image-container">
+            <img src="./public/images/gift-for-${type}.png" alt="gift-for-${type}">
+        </div>
+        <div class="modal-information">
+            <div class="modal-text">
+              <p class="header4 ${type}">${gift.category}</p>
+              <p class="header3">${gift.name}</p>
+              <p class="paragraph">${gift.description}</p>
+            </div>
+            <div class="modal-superpowers">
+                <p class="header4">Adds superpowers to:</p>
+                <div class="modal-stars">
+                    <p class="stars-container paragraph">Live<span>${gift.superpowers.live}</span><span class="stars" id="starsLive"></span></p>
+                    <p class="stars-container paragraph">Create<span>${gift.superpowers.create}</span><span class="stars" id="starsCreate"></span></p>
+                    <p class="stars-container paragraph">Love<span>${gift.superpowers.love}</span><span class="stars" id="starsLove"></span></p>
+                    <p class="stars-container paragraph">Dream<span>${gift.superpowers.dream}</span><span class="stars" id="starsDream"></span></p>
+                </div> 
+            </div>
+      </div>
+    </div>
+    `;
+
+    insertStars(gift);
+
+    function insertStars(gift) {
+      const numberOfStarsLive = Number(gift.superpowers.live) / 100;
+      const numberOfStarsCreate = Number(gift.superpowers.create) / 100;
+      const numberOfStarsLove = Number(gift.superpowers.love) / 100;
+      const numberOfStarsDream = Number(gift.superpowers.dream) / 100;
+
+      const starsLive = document.getElementById("starsLive");
+      const starsCreate = document.getElementById("starsCreate");
+      const starsLove = document.getElementById("starsLove");
+      const starsDream = document.getElementById("starsDream");
+
+      starsLive.innerHTML = ``;
+      for (let i = 0; i < numberOfStarsLive; i++) {
+        const star = document.createElement("span");
+        star.classList.add("star");
+        star.innerHTML = "&nbsp;";
+        starsLive.appendChild(star);
+      }
+
+      starsCreate.innerHTML = ``;
+      for (let i = 0; i < numberOfStarsCreate; i++) {
+        const star = document.createElement("span");
+        star.classList.add("star");
+        star.innerHTML = "&nbsp;";
+        starsCreate.appendChild(star);
+      }
+
+      starsLove.innerHTML = ``;
+      for (let i = 0; i < numberOfStarsLove; i++) {
+        const star = document.createElement("span");
+        star.classList.add("star");
+        star.innerHTML = "&nbsp;";
+        starsLove.appendChild(star);
+      }
+
+      starsDream.innerHTML = ``;
+      for (let i = 0; i < numberOfStarsDream; i++) {
+        const star = document.createElement("span");
+        star.classList.add("star");
+        star.innerHTML = "&nbsp;";
+        starsDream.appendChild(star);
+      }
+    }
+
+    modal.querySelector(".close-btn").addEventListener("click", closeModal);
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    function closeModal() {
+      document.body.classList.remove("no-scroll");
+      modal.style.display = "none";
+    }
+  }
+
+  //Modal end
 
   //Scroll-to-Top
   const scrollToTopBtn = document.getElementById("scrollToTopBtn");

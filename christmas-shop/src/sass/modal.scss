@@ -1,0 +1,93 @@
+@use "colors";
+
+.modal {
+  display: none; /* Скрыто по умолчанию */
+  // display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Затемнение фона */
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.modal-image-container {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+}
+
+.modal-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-content {
+  background: var(--color-content-background);
+  border-radius: 20px;
+  max-width: 400px;
+  height: auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+
+.modal-information {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--color-static-white);
+  border-radius: 20px;
+}
+
+.modal-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.modal-superpowers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+.modal-stars {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  text-align: left;
+}
+
+.stars-container {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: auto 40px 112px;
+}
+
+.stars {
+  display: flex;
+  gap: 8px;
+  justify-content: start;
+  align-items: center;
+}
+
+.star {
+  background: url("../../public/assets/snowflake.svg") no-repeat center center;
+  width: 16px;
+}
