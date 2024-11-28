@@ -493,8 +493,10 @@ footer {
   white-space: normal;
 }
 .bestGift-card .bestGift-image {
+  border-radius: 20px 20px 0 0;
   height: 230px;
   width: 310px;
+  background-color: var(--color-content-background);
 }
 .bestGift-card:hover {
   cursor: pointer;
@@ -518,9 +520,12 @@ footer {
 .card-text {
   padding: 15px 20px;
   display: flex;
+  height: 109px;
   flex-direction: column;
   text-align: start;
   gap: 10px;
+  border-radius: 20px;
+  background-color: var(--color-static-white);
 }
 
 .no-scroll {
