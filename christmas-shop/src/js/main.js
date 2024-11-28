@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function fetchData() {
     try {
-      const response = await fetch("/public/data/gifts.json");
+      const response = await fetch("./data/gifts.json");
 
       if (!response.ok) {
         throw new Error("Error fetching data...");
