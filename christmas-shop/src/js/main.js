@@ -21,6 +21,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  if (document.body.dataset.page === "gifts") {
+    const giftsLink = document.querySelector("#gifts-link");
+
+    const handleClick = (e) => {
+      if (window.innerWidth > 768) return;
+      if (e.target === giftsLink) {
+        console.log("click");
+        btnBurger.classList.remove("active");
+        menu.classList.remove("active");
+        body.classList.remove("no-scroll");
+      }
+    };
+
+    giftsLink.addEventListener("click", handleClick);
+
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        giftsLink.removeEventListener("click", handleClick);
+      } else {
+        giftsLink.addEventListener("click", handleClick);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+  }
+
   // Tabs switcher
 
   function tabSwitcher() {
@@ -291,20 +317,22 @@ document.addEventListener("DOMContentLoaded", () => {
   //Modal end
 
   //Scroll-to-Top
-  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  if (document.body.dataset.page === "gifts") {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-  window.addEventListener("scroll", () => {
-    if (window.innerWidth <= 768 && window.scrollY > 300) {
-      scrollToTopBtn.style.display = "block";
-    } else {
-      scrollToTopBtn.style.display = "none";
-    }
-  });
-
-  scrollToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+    window.addEventListener("scroll", () => {
+      if (window.innerWidth <= 768 && window.scrollY > 300) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
     });
-  });
+
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
 });
