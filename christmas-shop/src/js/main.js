@@ -75,10 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // New Year Timer
+  // New Year Timer in UTC+0
   function getNextNewYearDate() {
-    const currentYear = new Date().getFullYear();
-    return new Date(`January 1, ${currentYear + 1} 00:00:00`).getTime();
+    const currentYear = new Date().getUTCFullYear();
+    return Date.UTC(currentYear + 1, 0, 1, 0, 0, 0); // January 1, 00:00:00 UTC
   }
 
   let newYearDate = getNextNewYearDate();
@@ -106,10 +106,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("minutes").textContent = minutes;
     document.getElementById("seconds").textContent = seconds;
   }
+
   if (document.body.dataset.page === "index") {
     setInterval(updateTimer, 1000);
     updateTimer();
   }
+
   // Slider items находятся внутри контейнера. Мы будем двигать items внутри контейнера
 
   if (document.body.dataset.page === "index") {
