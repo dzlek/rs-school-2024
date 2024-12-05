@@ -281,10 +281,24 @@ document.addEventListener("DOMContentLoaded", () => {
         starsLive.appendChild(star);
       }
 
+      for (let i = numberOfStarsLive; i < 5; i++) {
+        const star = document.createElement("span");
+        star.classList.add("star-10");
+        star.innerHTML = "&nbsp;";
+        starsLive.appendChild(star);
+      }
+
       starsCreate.innerHTML = ``;
       for (let i = 0; i < numberOfStarsCreate; i++) {
         const star = document.createElement("span");
         star.classList.add("star");
+        star.innerHTML = "&nbsp;";
+        starsCreate.appendChild(star);
+      }
+
+      for (let i = numberOfStarsCreate; i < 5; i++) {
+        const star = document.createElement("span");
+        star.classList.add("star-10");
         star.innerHTML = "&nbsp;";
         starsCreate.appendChild(star);
       }
@@ -297,10 +311,24 @@ document.addEventListener("DOMContentLoaded", () => {
         starsLove.appendChild(star);
       }
 
+      for (let i = numberOfStarsLove; i < 5; i++) {
+        const star = document.createElement("span");
+        star.classList.add("star-10");
+        star.innerHTML = "&nbsp;";
+        starsLove.appendChild(star);
+      }
+
       starsDream.innerHTML = ``;
       for (let i = 0; i < numberOfStarsDream; i++) {
         const star = document.createElement("span");
         star.classList.add("star");
+        star.innerHTML = "&nbsp;";
+        starsDream.appendChild(star);
+      }
+
+      for (let i = numberOfStarsDream; i < 5; i++) {
+        const star = document.createElement("span");
+        star.classList.add("star-10");
         star.innerHTML = "&nbsp;";
         starsDream.appendChild(star);
       }

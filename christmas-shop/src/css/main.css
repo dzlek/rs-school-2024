@@ -250,6 +250,11 @@ li {
   width: 16px;
 }
 
+.star-10 {
+  background: url("../../public/assets/snowflake-10.svg") no-repeat center center;
+  width: 16px;
+}
+
 body {
   margin: 0 auto;
   max-width: 1440px;
