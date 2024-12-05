@@ -79,6 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function getNextNewYearDate() {
     const currentYear = new Date().getUTCFullYear();
     return Date.UTC(currentYear + 1, 0, 1, 0, 0, 0); // January 1, 00:00:00 UTC
+
+    // const currentYear = new Date().getFullYear();
+    // return new Date(January 1, ${currentYear + 1} 00:00:00).getTime();
   }
 
   let newYearDate = getNextNewYearDate();
@@ -128,14 +131,14 @@ document.addEventListener("DOMContentLoaded", () => {
       let sliderItemsWidth = sliderItems.offsetWidth;
 
       let screenWidth = window.innerWidth;
-      let numberOfClicks = screenWidth >= 768 ? 3 : 6;
+      let numberOfClicks = screenWidth > 768 ? 3 : 6;
       let step = (sliderContainerWidth - sliderItemsWidth) / numberOfClicks;
 
       window.addEventListener("resize", () => {
         currentPosition = 0; //if remove working correctly, added according task
         sliderItems.style.transform = `translateX(-${currentPosition})`; //if remove working correctly, added according task
         screenWidth = window.innerWidth;
-        numberOfClicks = screenWidth >= 768 ? 3 : 6;
+        numberOfClicks = screenWidth > 768 ? 3 : 6;
         sliderItemsWidth = sliderItems.offsetWidth;
         step = (sliderContainerWidth - sliderItemsWidth) / numberOfClicks;
         updateButtons();
