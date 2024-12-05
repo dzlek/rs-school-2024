@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       function updateButtons() {
-        btnLeft.disabled = currentPosition <= 0;
+        btnLeft.disabled = currentPosition <= 10;
         btnRight.disabled =
           currentPosition >= sliderContainerWidth - sliderItemsWidth;
       }
