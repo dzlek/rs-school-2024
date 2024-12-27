@@ -49,7 +49,8 @@ li {
   font-family: "Montserrat", sans-serif;
 }
 
-.header3, .contacts-items h3 {
+.header3,
+.contacts-items h3 {
   font-size: 1rem;
   font-weight: 600;
   line-height: 152%;
@@ -76,7 +77,9 @@ li {
   font-family: "Montserrat", sans-serif;
 }
 
-.actionLarge, .menu.active, .contacts-items p {
+.actionLarge,
+.menu.active,
+.contacts-items p {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 152%;
@@ -143,7 +146,9 @@ li {
   .contacts-social .icon:hover path {
     stroke: var(--color-dark) !important;
   }
-  .bestGift-card:hover .header3, .bestGift-card:hover .contacts-items h3, .contacts-items .bestGift-card:hover h3 {
+  .bestGift-card:hover .header3,
+  .bestGift-card:hover .contacts-items h3,
+  .contacts-items .bestGift-card:hover h3 {
     color: var(--color-dark) !important;
   }
   .btn-primary:hover {
@@ -251,7 +256,8 @@ li {
 }
 
 .star-10 {
-  background: url("../../public/assets/snowflake-10.svg") no-repeat center center;
+  background: url("../../public/assets/snowflake-10.svg") no-repeat center
+    center;
   width: 16px;
 }
 
@@ -488,7 +494,9 @@ footer {
   background-color: var(--color-content-background);
   border-radius: 20px;
 }
-.bestGift-card .header3, .bestGift-card .contacts-items h3, .contacts-items .bestGift-card h3 {
+.bestGift-card .header3,
+.bestGift-card .contacts-items h3,
+.contacts-items .bestGift-card h3 {
   color: var(--color-dark);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -506,7 +514,9 @@ footer {
 .bestGift-card:hover {
   cursor: pointer;
 }
-.bestGift-card:hover .header3, .bestGift-card:hover .contacts-items h3, .contacts-items .bestGift-card:hover h3 {
+.bestGift-card:hover .header3,
+.bestGift-card:hover .contacts-items h3,
+.contacts-items .bestGift-card:hover h3 {
   color: var(--color-primary);
 }
 
