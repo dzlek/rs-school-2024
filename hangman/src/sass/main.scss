@@ -10,10 +10,19 @@
     sans-serif;
 }
 
+.header {
+  position: absolute;
+  top: 0;
+  right: 25%;
+  z-index: 100;
+  @media screen and (max-width: 330px) {
+    display: none;
+  }
+}
+
 .main {
   max-width: 1024px;
   margin: 0 auto;
-  background-color: white;
   display: grid;
   grid-template-areas: "gallows alphabet" "answer answer";
   grid-template-columns: 472fr 552fr;
@@ -28,7 +37,7 @@
     max-width: 518px;
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 330px), screen and (max-height: 360px) {
     display: none;
   }
 }
@@ -44,6 +53,16 @@
   grid-area: gallows;
   background-image: url("../../public/images/back-gallows.png");
   position: relative;
+}
+
+.incorrect-count {
+  position: absolute;
+  top: calc((100vh - 134px) * 0.06);
+  left: 30%;
+  color: var(--color-text-dark);
+  font:
+    bold 24px Times New Roman,
+    sans-serif;
 }
 
 .gallows-man {
@@ -158,8 +177,45 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  border: 1px solid black;
 }
+
 .modal {
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--color-background);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 80%;
+}
+
+.play-again {
+  background-color: var(--color-text-hover);
+
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.play-again:hover {
+  background-color: var(--color-play-again);
 }
