@@ -1,4 +1,165 @@
-div {
-  color: var(--color-primary);
-  background-color: green;
+@use "base";
+@use "colors";
+
+.body {
+  background-color: var(--color-background);
+  margin: 0;
+  color: var(--color-text-dark);
+  font:
+    bold 16px Times New Roman,
+    sans-serif;
+}
+
+.main {
+  max-width: 1024px;
+  margin: 0 auto;
+  background-color: white;
+  display: grid;
+  grid-template-areas: "gallows alphabet" "answer answer";
+  grid-template-columns: 472fr 552fr;
+  grid-template-rows: 890fr 134px;
+  height: 100vh;
+
+  @media screen and (max-width: 768px) and (min-width: 320px) {
+    grid-template-areas: "gallows" "answer" "alphabet";
+    grid-template-columns: 1fr;
+    grid-template-rows: 890fr 134px 890fr;
+    height: 187vh;
+    max-width: 518px;
+  }
+
+  @media screen and (max-width: 320px) {
+    display: none;
+  }
+}
+.gallows,
+.alphabet,
+.answer {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gallows {
+  grid-area: gallows;
+  background-image: url("../../public/images/back-gallows.png");
+  position: relative;
+}
+
+.gallows-man {
+  position: absolute;
+  top: 32%;
+  left: 21%;
+  height: 62%;
+  width: 40%;
+  background-image: url("../../public/images/man-6.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.alphabet {
+  grid-area: alphabet;
+  background-image: url("../../public/images/back-alphabet.png");
+  padding: 18vh 10.5% calc((100vh - 134px) * 0.27) 5%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 5px;
+}
+
+.alphabet-keyboard {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  font:
+    bold 32px Times New Roman,
+    sans-serif;
+  &:hover {
+    color: var(--color-text-hover);
+  }
+  &:disabled {
+    pointer-events: none;
+    color: var(--color-text-20);
+    cursor: not-allowed;
+  }
+}
+
+.answer {
+  grid-area: answer;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  background-image: url("../../public/images/back-answer.png");
+}
+
+.question-text,
+.answer-text {
+  font-size: 32px;
+
+  & span:nth-child(1) {
+    transform: skew(-20deg, 0deg);
+  }
+  & span:nth-child(2) {
+    transform: skew(-15deg, 0deg);
+  }
+  & span:nth-child(3) {
+    transform: skew(-10deg, 0deg);
+  }
+  & span:nth-child(4) {
+    transform: skew(-5deg, 0deg);
+  }
+  & span:nth-child(5) {
+    transform: skew(-0deg, 0deg);
+  }
+  & span:nth-child(6) {
+    transform: skew(5deg, 0deg);
+  }
+  & span:nth-child(7) {
+    transform: skew(10deg, 0deg);
+  }
+  & span:nth-child(8) {
+    transform: skew(15deg, 0deg);
+  }
+  & span:nth-child(9) {
+    transform: skew(20deg, 0deg);
+  }
+}
+
+.question-text {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 10px;
+  padding: 5px 10% 0px 8.5%;
+}
+
+.question-text-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.answer-text {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 18px;
+  padding: 0px 9% 0px 8%;
+}
+
+.answer-text-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+.modal {
+  display: none;
 }

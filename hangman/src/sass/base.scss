@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+h1,
+h2,
+h3,
+p,
+li,
+a,
+div,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
