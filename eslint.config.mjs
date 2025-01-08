@@ -19,7 +19,7 @@ export default [
       ...prettierConfig.rules,
       "prettier/prettier": [
         "error",
-        { trailingComma: "all", arrowParens: "always" },
+        { trailingComma: "all", arrowParens: "always", endOfLine: "auto" },
       ],
     },
   },
