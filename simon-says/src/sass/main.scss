@@ -1,4 +1,3 @@
-/* Base styles */
 body {
   margin: 0;
   padding: 0;
@@ -73,6 +72,8 @@ select {
 
 .feedback {
   font-size: 18px;
+  text-align: center;
+  min-height: 24px;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -85,10 +86,14 @@ select {
   color: #dc3545;
 }
 
-/* Virtual keyboard */
+.feedback.processing {
+  color: #007bff;
+}
+
 .keyboard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 70px));
   gap: 10px;
   width: 100%;
   max-width: 400px;
@@ -114,10 +119,6 @@ select {
 .key.active {
   background-color: #007bff;
   color: #ffffff;
-}
-
-.key:active {
-  transform: scale(0.95);
 }
 
 /* Feedback effects */
@@ -151,7 +152,6 @@ select {
   }
 }
 
-/* Adaptive styles */
 @media (max-width: 768px) {
   .container {
     padding: 15px;
