@@ -1,5 +1,3 @@
-console.log("Started...");
-
 let gameState = {
   level: "Easy",
   sequence: [],
@@ -85,7 +83,7 @@ function initializeGame() {
     levelSelector.disabled = false;
     document.getElementById("start-button").disabled = false;
     document.getElementById("start-button").style.display = "block";
-    document.getElementById("new-game-button").disabled = true;
+    // document.getElementById("new-game-button").disabled = true;
     document.getElementById("repeat-button").style.display = "none";
     document.getElementById("next-button").style.display = "none";
     const feedback = document.getElementById("feedback");
@@ -98,6 +96,8 @@ function initializeGame() {
       inputEnabled: false,
       attempts: 0,
     };
+    document.getElementById("round-button").textContent =
+      "Round counter: " + (gameState.currentRound + 1);
     renderKeyboard();
   });
 
@@ -164,10 +164,12 @@ function generateSequence() {
   gameState.sequence = Array.from({ length: newLength }, () => {
     return symbols[Math.floor(Math.random() * symbols.length)];
   });
-  console.log("sequence:", gameState.sequence);
+  console.log("sequence:", gameState.sequence.join(" - "));
 }
 
 function simulateSequence() {
+  document.getElementById("new-game-button").disabled = true;
+  gameState.inputEnabled = false;
   const keys = document.querySelectorAll(".key");
   gameState.sequence.forEach((symbol, index) => {
     const key = Array.from(keys).find((k) => k.textContent === symbol);
@@ -179,6 +181,7 @@ function simulateSequence() {
 
   setTimeout(() => {
     gameState.inputEnabled = true;
+    document.getElementById("new-game-button").disabled = false;
   }, gameState.sequence.length * 500);
 
   document.getElementById("repeat-button").disabled = false;
