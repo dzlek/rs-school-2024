@@ -9,7 +9,9 @@
     "prettier": "prettier --write \"christmas-shop/src/**/*.{js,jsx,ts,tsx,css,scss,md}\" \"hangman/src/**/*.{js,jsx,ts,tsx,css,scss,md}\"",
     "test": "test",
     "sass": "sass --watch christmas-shop/src/sass/main.scss:christmas-shop/src/css/main.css christmas-shop/src/sass/home.scss:christmas-shop/src/css/home.css christmas-shop/src/sass/gifts.scss:christmas-shop/src/css/gifts.css  simon-says/src/sass/main.scss:simon-says/src/css/main.css  nonograms/src/sass/main.scss:nonograms/src/css/main.css",
-    "prepare": "husky"
+    "prepare": "husky",
+    "live-server": "live-server nonograms",
+    "dev": "concurrently \"npm run sass\" \"npm run live-server\""
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,8 @@
   },
   "homepage": "https://github.com/rolling-scopes-school/dzlek-JSFE2024Q4#readme",
   "dependencies": {
+    "concurrently": "^9.1.2",
+    "live-server": "^1.2.0",
     "sass": "^1.80.7"
   },
   "devDependencies": {
