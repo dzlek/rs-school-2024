@@ -1,0 +1,208 @@
+html::-webkit-scrollbar {
+  width: 0;
+}
+
+:root {
+  --background: #ffffff;
+  --cell-color: #808080;
+  --border-color: #000000;
+  --wrong-color: #ffc0cb;
+  --text-color: #000000;
+}
+
+body {
+  font-family: "Didact Gothic", sans-serif;
+  height: 100vh;
+  width: 100%;
+  margin: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 45px;
+  text-align: center;
+}
+
+button {
+  font-family: "Didact Gothic", sans-serif;
+}
+
+select {
+  font-family: "Didact Gothic", sans-serif;
+}
+
+#puzzleboard {
+  display: grid;
+  grid-template-columns: auto repeat(10, 23px);
+  grid-template-rows: auto repeat(9, 23px);
+}
+
+div {
+  border: 1px solid var(--border-color);
+  justify-content: center;
+  text-align: center;
+}
+
+.topkey {
+  grid-template-columns: auto repeat(10, 23px);
+  display: grid;
+  text-align: center;
+  border-bottom: 3px solid var(--border-color);
+  border-top: 3px solid var(--border-color);
+}
+
+.topkey div {
+  display: flex;
+  align-items: flex-end;
+}
+
+.leftkey {
+  text-align: right;
+  padding: 2px 5px 0px 2px;
+  border-right: 3px solid var(--border-color);
+  border-left: 3px solid var(--border-color);
+}
+
+#c0r0 {
+  border-left: 3px solid var(--border-color);
+  border-right: 3px solid var(--border-color);
+}
+
+#puzzle-full {
+  display: block;
+  /* border: 3px solid var(--border-color); */
+}
+
+#c5r0,
+#c5r1,
+#c5r2,
+#c5r3,
+#c5r4,
+#c5r5,
+#c5r6,
+#c5r7,
+#c5r8,
+#c5r9,
+#c5r10,
+#c5r11,
+#c5r12,
+#c5r13,
+#c5r14,
+#c5r15 {
+  border-right: 3px solid var(--border-color);
+}
+
+#c10r0,
+#c10r1,
+#c10r2,
+#c10r3,
+#c10r4,
+#c10r5,
+#c10r6,
+#c10r7,
+#c10r8,
+#c10r9,
+#c10r10,
+#c10r11,
+#c10r12,
+#c10r13,
+#c10r14,
+#c10r15 {
+  border-right: 3px solid var(--border-color);
+}
+
+#c15r0,
+#c15r1,
+#c15r2,
+#c15r3,
+#c15r4,
+#c15r5,
+#c15r6,
+#c15r7,
+#c15r8,
+#c15r9,
+#c15r10,
+#c15r11,
+#c15r12,
+#c15r13,
+#c15r14,
+#c15r15 {
+  border-right: 3px solid var(--border-color);
+}
+
+#c0r5,
+#c1r5,
+#c2r5,
+#c3r5,
+#c4r5,
+#c5r5,
+#c6r5,
+#c7r5,
+#c8r5,
+#c9r5,
+#c10r5,
+#c11r5,
+#c12r5,
+#c13r5,
+#c14r5,
+#c15r5 {
+  border-bottom: 3px solid var(--border-color);
+}
+
+#c0r10,
+#c1r10,
+#c2r10,
+#c3r10,
+#c4r10,
+#c5r10,
+#c6r10,
+#c7r10,
+#c8r10,
+#c9r10,
+#c10r10,
+#c11r10,
+#c12r10,
+#c13r10,
+#c14r10,
+#c15r10 {
+  border-bottom: 3px solid var(--border-color);
+}
+
+#c0r15,
+#c1r15,
+#c2r15,
+#c3r15,
+#c4r15,
+#c5r15,
+#c6r15,
+#c7r15,
+#c8r15,
+#c9r15,
+#c10r15,
+#c11r15,
+#c12r15,
+#c13r15,
+#c14r15,
+#c15r15 {
+  border-bottom: 3px solid var(--border-color);
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--border-color);
+  border-collapse: collapse;
+  padding: 2px 3px;
+}
+
+table,
+tr:first-of-type {
+  border: 3px solid var(--border-color);
+}
+
+/*# sourceMappingURL=main.css.map */

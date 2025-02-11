@@ -1,0 +1,37 @@
+@use "colors" as colors;
+
+@media (hover: none) {
+  a:hover,
+  .paragraph:hover,
+  .card:hover,
+  .caption:hover {
+    background-color: var(--color-content-background) !important;
+    color: var(--color-dark) !important;
+  }
+  .menu a:hover {
+    background-color: var(--color-content-background) !important;
+  }
+  .contacts-items a:hover {
+    background-color: var(--color-content-background) !important;
+  }
+
+  .contacts-social .icon:hover path {
+    stroke: var(--color-dark) !important;
+  }
+
+  .bestGift-card:hover .header3 {
+    color: var(--color-dark) !important;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-dark) !important;
+    color: var(--color-static-white) !important;
+  }
+  .btn-slider:hover {
+    background-color: transparent !important;
+    color: var(--color-static-white) !important;
+    path {
+      stroke: var(--color-static-white) !important;
+    }
+  }
+}
